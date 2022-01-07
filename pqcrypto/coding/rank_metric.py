@@ -26,14 +26,7 @@ def random_vector(field, num_of_elements, rank_weight):
             "of elements in the vector"
         )
 
-    m = random_matrix(
-        base_field,
-        num_of_elements,
-        field_degree,
-        algorithm="echelonizable",
-        rank=rank_weight,
-        max_tries=None,
-    )
+    m = random_matrix(base_field, num_of_elements, field_degree, rank_weight)
 
     if field_degree == 1:
         return vector(field, m.list())
